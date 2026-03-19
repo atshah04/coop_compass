@@ -47,6 +47,9 @@ function JobDetailPage({ jobs, profile }) {
           <p>
             {job.location} | {job.salary ? `$${job.salary}/hr` : "Salary not listed"} | Deadline {job.deadline}
           </p>
+          <Link className="btn-secondary connect-link" to={`/connect?jobId=${job.id}`}>
+            Message past interns for this exact role
+          </Link>
         </div>
         <MatchRing score={job.matchScore} />
       </div>
@@ -127,7 +130,7 @@ function JobDetailPage({ jobs, profile }) {
                 <strong>Interview difficulty:</strong> {review.interview}
               </p>
               <p>
-                <strong>Actual stack:</strong> {review.stack}
+                <strong>Actual day-to-day:</strong> {review.dayToDay}
               </p>
               <p>{review.quote}</p>
             </article>

@@ -214,8 +214,8 @@ function OnboardingPage({ profile, setProfile, preferences, setPreferences }) {
           <aside className="verify-help">
             <h4>Why this matters</h4>
             <p>
-              Your feed and match confidence are only as accurate as this profile. Add missing technologies or
-              coursework so you do not under-estimate your competitiveness.
+              Your feed and match confidence are only as accurate as this profile. Add missing skills, coursework,
+              or experiences so you do not under-estimate your competitiveness.
             </p>
             <button type="button" className="btn-primary" onClick={() => setStep(3)}>
               Looks good, continue

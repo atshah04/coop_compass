@@ -478,6 +478,10 @@ label {
   align-items: center;
 }
 
+.connect-link {
+  margin-top: 0.8rem;
+}
+
 .tab-row {
   margin: 1rem 0;
   display: flex;
@@ -561,6 +565,122 @@ label {
   padding: 1rem;
 }
 
+.connect-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1rem;
+}
+
+.connect-sidebar,
+.chat-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.connect-sidebar {
+  padding: 1rem;
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+}
+
+.channel-button {
+  border: 1px solid #c5daec;
+  background: #f8fcff;
+  border-radius: 12px;
+  padding: 0.65rem;
+  text-align: left;
+  display: grid;
+  gap: 0.2rem;
+  color: #1f4668;
+}
+
+.channel-button.active {
+  border-color: #82b7df;
+  background: #e6f3ff;
+}
+
+.channel-button span,
+.channel-button small {
+  color: var(--muted);
+}
+
+.chat-panel {
+  padding: 1rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.chat-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.chat-tags span {
+  font-size: 0.82rem;
+  border-radius: 999px;
+  background: #ecf6ff;
+  color: #2f5b80;
+  padding: 0.25rem 0.55rem;
+}
+
+.chat-stream {
+  max-height: 440px;
+  overflow: auto;
+  display: grid;
+  gap: 0.6rem;
+  padding-right: 0.4rem;
+}
+
+.bubble {
+  max-width: 78%;
+  border-radius: 12px;
+  padding: 0.65rem 0.75rem;
+}
+
+.bubble p {
+  margin: 0;
+}
+
+.bubble small {
+  color: var(--muted);
+}
+
+.bubble.mentor {
+  background: #eaf5ff;
+  border: 1px solid #bdd9ef;
+}
+
+.bubble.student {
+  background: #e8f8ef;
+  border: 1px solid #b8e1ca;
+  margin-left: auto;
+}
+
+.chat-input {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.chat-empty {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+}
+
 .kanban-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -621,6 +741,10 @@ label {
   .verify-grid {
     grid-template-columns: 1fr;
   }
+
+  .connect-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 760px) {
@@ -639,8 +763,17 @@ label {
   }
 
   .detail-hero,
-  .job-card-main {
+  .job-card-main,
+  .chat-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .chat-input {
+    grid-template-columns: 1fr;
+  }
+
+  .bubble {
+    max-width: 100%;
   }
 }

@@ -11,7 +11,7 @@ const pillars = [
   },
   {
     title: "Peer reviews that reduce uncertainty",
-    body: "See role-specific interview difficulty, team culture, and day-to-day stack from upper-year students."
+    body: "See role-specific interview difficulty, team culture, and day-to-day responsibilities from upper-year students."
   },
   {
     title: "Feedback after rejection",
@@ -23,8 +23,7 @@ function LandingPage() {
   return (
     <section className="landing-page">
       <div className="hero-panel">
-        <p className="eyebrow">Built for first and second year CS students</p>
-        <h2>Stop Guessing. Start Matching. The Smarter Way to Find Your Next CS Co-op.</h2>
+        <h2>Stop Guessing. Start Matching. The Smarter Way to Find Your Next Co-op.</h2>
         <p>
           Co-op Compass helps risk-averse students apply strategically with confidence. You see match logic,
           skill gaps, and real student feedback before spending hours on applications.

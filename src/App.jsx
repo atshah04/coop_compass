@@ -5,6 +5,7 @@ import OnboardingPage from "./pages/OnboardingPage";
 import DashboardPage from "./pages/DashboardPage";
 import JobDetailPage from "./pages/JobDetailPage";
 import TrackerPage from "./pages/TrackerPage";
+import PeerConnectPage from "./pages/PeerConnectPage";
 import { JOBS, STATUS_COLUMNS } from "./data/mockData";
 
 const INITIAL_PROFILE = {
@@ -15,7 +16,7 @@ const INITIAL_PROFILE = {
 
 const INITIAL_PREFERENCES = {
   minSalary: 28,
-  industries: ["FinTech", "SaaS"],
+  industries: ["Business", "Healthcare"],
   locations: ["Waterloo", "Toronto"],
   openToRemote: true
 };
@@ -89,6 +90,7 @@ function App() {
             </NavLink>
             <NavLink to="/onboarding">Onboarding</NavLink>
             <NavLink to="/dashboard">Smart Feed</NavLink>
+            <NavLink to="/connect">Peer Connect</NavLink>
             <NavLink to="/tracker">Tracker</NavLink>
           </nav>
         </div>
@@ -116,6 +118,7 @@ function App() {
             path="/jobs/:jobId"
             element={<JobDetailPage jobs={jobsWithScore} profile={profile} />}
           />
+          <Route path="/connect" element={<PeerConnectPage jobs={jobsWithScore} />} />
           <Route
             path="/tracker"
             element={

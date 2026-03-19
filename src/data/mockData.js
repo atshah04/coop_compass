@@ -1,162 +1,282 @@
 export const KEYWORD_SKILLS = [
-  "java",
-  "python",
-  "sql",
-  "javascript",
-  "typescript",
-  "react",
-  "node",
-  "c",
-  "c++",
-  "go",
-  "git",
-  "aws",
-  "docker",
+  "excel",
+  "power bi",
+  "tableau",
+  "data analysis",
+  "research",
+  "project management",
+  "communication",
+  "copywriting",
+  "social media",
+  "crm",
+  "salesforce",
   "figma",
-  "kotlin",
-  "swift"
+  "canva",
+  "stakeholder management",
+  "presentation",
+  "budgeting",
+  "process mapping",
+  "scheduling",
+  "event planning",
+  "customer service",
+  "python",
+  "sql"
 ];
 
 export const KEYWORD_COURSES = [
-  "data structures",
-  "algorithms",
-  "databases",
-  "operating systems",
-  "object-oriented programming",
-  "software engineering",
-  "computer networks",
-  "machine learning"
+  "statistics",
+  "economics",
+  "marketing",
+  "finance",
+  "human resources",
+  "operations management",
+  "accounting",
+  "business communication",
+  "project management",
+  "psychology"
 ];
 
-export const INDUSTRIES = ["FinTech", "Game Dev", "HealthTech", "EdTech", "SaaS", "AI/ML"];
+export const INDUSTRIES = [
+  "Business",
+  "Healthcare",
+  "Public Sector",
+  "Retail",
+  "Media",
+  "Technology"
+];
 
 export const JOBS = [
   {
     id: "j1",
-    company: "Northbeam Analytics",
-    role: "Software Developer Intern",
-    salary: 34,
+    company: "Northbeam Insights",
+    role: "Data Analyst Co-op",
+    salary: 31,
     deadline: "2026-04-02",
     location: "Waterloo",
-    industry: "SaaS",
-    requirements: ["Java", "SQL", "Git", "Data Structures"],
-    learnable: ["Spring Boot"],
+    industry: "Business",
+    requirements: ["Excel", "Data analysis", "Presentation", "Statistics"],
+    learnable: ["Power BI"],
     reviews: [
       {
-        from: "3B CS",
+        from: "3B Economics",
         interview: "Medium",
-        stack: "Java, Postgres, React",
-        quote: "Two technical rounds and one behavioral. They care about clean code and communication."
+        dayToDay: "Excel models, dashboard updates, weekly stakeholder readouts",
+        quote: "Case exercise plus one behavioral round. They value clear thinking over flashy jargon."
       },
       {
-        from: "4A CS",
-        interview: "Hard",
-        stack: "Java, Kafka",
-        quote: "System design lite. Not impossible, but prep your concurrency basics."
+        from: "4A Statistics",
+        interview: "Medium",
+        dayToDay: "Trend analysis, survey summaries, insight memos",
+        quote: "Great mentorship. Be ready to explain how your analysis would influence decisions."
       }
     ],
     rejectionInsights: [
-      "60% of rejected candidates lacked advanced SQL query depth.",
-      "41% struggled to explain tradeoffs in past projects.",
-      "Top improvement: prepare one end-to-end project story with measurable impact."
+      "57% of rejected candidates could not explain their analysis process clearly.",
+      "43% lacked confidence presenting recommendations.",
+      "Top improvement: prepare one project story with a clear business outcome."
     ]
   },
   {
     id: "j2",
-    company: "Lattice FinPay",
-    role: "Backend Co-op",
-    salary: 38,
+    company: "Lattice Financial",
+    role: "Operations Co-op",
+    salary: 29,
     deadline: "2026-03-31",
     location: "Toronto",
-    industry: "FinTech",
-    requirements: ["Python", "SQL", "APIs", "Databases"],
-    learnable: ["Kafka", "Redis"],
+    industry: "Business",
+    requirements: ["Process mapping", "Communication", "Scheduling", "Project management"],
+    learnable: ["Salesforce"],
     reviews: [
       {
-        from: "3A CS",
+        from: "3A AFM",
         interview: "Medium",
-        stack: "Python, Flask, AWS",
-        quote: "Take-home was fair and focused on API design plus testing."
+        dayToDay: "Workflow documentation, vendor follow-ups, KPI tracking",
+        quote: "Interview focused on prioritization and detail orientation."
       }
     ],
     rejectionInsights: [
-      "52% of rejections came from weak API design explanations.",
-      "35% did not demonstrate debugging process clearly.",
-      "Top improvement: practice writing test cases before coding."
+      "50% of rejections came from unclear examples of ownership.",
+      "37% struggled with scenario questions about conflicting deadlines.",
+      "Top improvement: prepare STAR stories for planning and coordination."
     ]
   },
   {
     id: "j3",
-    company: "Pixel Grove Studios",
-    role: "Gameplay Programmer Intern",
-    salary: 30,
+    company: "Pixel Grove Media",
+    role: "Marketing & Content Co-op",
+    salary: 27,
     deadline: "2026-04-10",
     location: "Remote",
-    industry: "Game Dev",
-    requirements: ["C++", "Math", "Debugging", "Algorithms"],
-    learnable: ["Unreal Engine"],
+    industry: "Media",
+    requirements: ["Copywriting", "Social media", "Research", "Canva"],
+    learnable: ["Paid campaign analytics"],
     reviews: [
       {
-        from: "2B CS",
-        interview: "Hard",
-        stack: "C++, Unreal",
-        quote: "Expect vector math and optimization questions. Great mentorship culture though."
+        from: "2B Arts",
+        interview: "Easy",
+        dayToDay: "Content calendar planning, campaign brainstorming, light reporting",
+        quote: "Friendly team and lots of room to pitch ideas if you bring examples."
       }
     ],
     rejectionInsights: [
-      "64% of rejected applicants could not optimize naive algorithms.",
-      "48% were unfamiliar with memory profiling tools.",
-      "Top improvement: build one polished gameplay demo and discuss performance choices."
+      "62% of rejected applicants lacked a writing portfolio.",
+      "33% did not show familiarity with campaign metrics.",
+      "Top improvement: prepare two sample posts and explain expected audience impact."
     ]
   },
   {
     id: "j4",
     company: "Maple Health Systems",
-    role: "Full-Stack Developer Co-op",
-    salary: 33,
+    role: "Program Coordination Co-op",
+    salary: 30,
     deadline: "2026-04-06",
     location: "Waterloo",
-    industry: "HealthTech",
-    requirements: ["JavaScript", "React", "Node", "SQL"],
-    learnable: ["HIPAA basics"],
+    industry: "Healthcare",
+    requirements: ["Stakeholder management", "Scheduling", "Business communication", "Excel"],
+    learnable: ["Healthcare compliance basics"],
     reviews: [
       {
-        from: "3B CS",
+        from: "3B Health Studies",
         interview: "Easy",
-        stack: "React, Node, Mongo",
-        quote: "Friendly process, more collaboration-focused than algorithm-heavy."
+        dayToDay: "Team meeting logistics, reporting, patient-program admin support",
+        quote: "Very collaborative environment. They care most about reliability and communication."
       }
     ],
     rejectionInsights: [
-      "46% missed out due to weak frontend state-management examples.",
-      "39% lacked SQL fundamentals despite full-stack resumes.",
-      "Top improvement: prepare one full-stack feature walkthrough."
+      "45% missed out due to weak examples of cross-team communication.",
+      "34% could not describe how they stay organized under pressure.",
+      "Top improvement: bring one concrete scheduling or coordination example."
     ]
   },
   {
     id: "j5",
     company: "NovaLearn",
-    role: "Platform Engineering Intern",
-    salary: 36,
+    role: "Student Success Co-op",
+    salary: 28,
     deadline: "2026-04-12",
     location: "Toronto",
-    industry: "EdTech",
-    requirements: ["Go", "Docker", "Git", "Computer Networks"],
-    learnable: ["Kubernetes"],
+    industry: "Technology",
+    requirements: ["Customer service", "Communication", "Research", "Presentation"],
+    learnable: ["CRM"],
     reviews: [
       {
-        from: "4A CS",
+        from: "4A Psychology",
         interview: "Medium",
-        stack: "Go, Docker, GCP",
-        quote: "They love candidates who can reason about reliability and incident response."
+        dayToDay: "Student onboarding calls, issue triage, resource creation",
+        quote: "Empathy and clear communication mattered more than prior platform knowledge."
       }
     ],
     rejectionInsights: [
-      "55% could not explain networking basics in distributed systems.",
-      "44% had no containerization project to discuss.",
-      "Top improvement: complete a small service deployment project with logs and monitoring."
+      "53% could not show examples of handling difficult conversations.",
+      "31% lacked evidence of initiative in past team settings.",
+      "Top improvement: prepare one story about resolving a user problem end-to-end."
+    ]
+  },
+  {
+    id: "j6",
+    company: "Civic Transit Office",
+    role: "Policy Research Co-op",
+    salary: 30,
+    deadline: "2026-04-09",
+    location: "Toronto",
+    industry: "Public Sector",
+    requirements: ["Research", "Writing", "Presentation", "Policy analysis"],
+    learnable: ["Public consultation process"],
+    reviews: [
+      {
+        from: "3A Political Science",
+        interview: "Medium",
+        dayToDay: "Briefing notes, stakeholder scans, policy memo drafts",
+        quote: "Expect scenario questions about balancing evidence with practical constraints."
+      }
+    ],
+    rejectionInsights: [
+      "49% of candidates lacked policy writing samples.",
+      "36% could not connect research findings to actionable recommendations.",
+      "Top improvement: bring one concise briefing note sample to discuss."
     ]
   }
 ];
 
 export const STATUS_COLUMNS = ["Saved", "Applied", "Interviewing", "Offer", "Rejected"];
+
+export const PEER_CHANNELS = [
+  {
+    id: "c1",
+    jobId: "j1",
+    company: "Northbeam Insights",
+    role: "Data Analyst Co-op",
+    mentor: "Avery (4A Statistics)",
+    gradYear: "2027",
+    responseTime: "Usually replies in 2-4h",
+    tags: ["Case interview", "Data storytelling", "Reporting"],
+    messages: [
+      {
+        from: "mentor",
+        text: "Happy to help. Ask me anything about interview prep or team culture.",
+        time: "09:12"
+      },
+      {
+        from: "student",
+        text: "Was presenting findings part of the interview?",
+        time: "09:15"
+      },
+      {
+        from: "mentor",
+        text: "Yes. I had to explain a mini case and walk through my recommendation clearly.",
+        time: "09:19"
+      }
+    ]
+  },
+  {
+    id: "c2",
+    jobId: "j2",
+    company: "Lattice Financial",
+    role: "Operations Co-op",
+    mentor: "Noah (3B AFM)",
+    gradYear: "2028",
+    responseTime: "Usually replies same day",
+    tags: ["Process mapping", "Prioritization", "Cross-team communication"],
+    messages: [
+      {
+        from: "mentor",
+        text: "If you want, I can review one STAR story before your interview.",
+        time: "13:03"
+      }
+    ]
+  },
+  {
+    id: "c3",
+    jobId: "j4",
+    company: "Maple Health Systems",
+    role: "Program Coordination Co-op",
+    mentor: "Sana (4B Health Studies)",
+    gradYear: "2026",
+    responseTime: "Usually replies in < 1h",
+    tags: ["Interview prep", "Healthcare admin", "Team fit"],
+    messages: [
+      {
+        from: "mentor",
+        text: "Interview was collaborative. Bring one project where you coordinated multiple stakeholders.",
+        time: "18:42"
+      }
+    ]
+  },
+  {
+    id: "c4",
+    jobId: "j6",
+    company: "Civic Transit Office",
+    role: "Policy Research Co-op",
+    mentor: "Maya (4A Political Science)",
+    gradYear: "2027",
+    responseTime: "Usually replies in 1-2h",
+    tags: ["Policy writing", "Public sector", "Research methods"],
+    messages: [
+      {
+        from: "mentor",
+        text: "Bring one writing sample. They ask how you turn evidence into practical recommendations.",
+        time: "10:21"
+      }
+    ]
+  }
+];
