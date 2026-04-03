@@ -27,7 +27,7 @@ function JobCard({ job }) {
       </div>
 
       <Link className="inline-link" to={`/jobs/${job.id}`}>
-        View transparent alignment breakdown
+        View fit breakdown
       </Link>
     </article>
   );

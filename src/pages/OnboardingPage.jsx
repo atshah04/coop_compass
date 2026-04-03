@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { INDUSTRIES, KEYWORD_COURSES, KEYWORD_SKILLS } from "../data/mockData";
+import onboardingProfileVisual from "../assets/illustrations/onboarding-profile.svg";
 
 function parseResumeText(rawText) {
   const text = rawText.toLowerCase();
@@ -73,7 +74,7 @@ function TagInput({ label, values, onAdd, onRemove, placeholder }) {
 function OnboardingPage({ profile, setProfile, preferences, setPreferences }) {
   const [step, setStep] = useState(1);
   const [uploadName, setUploadName] = useState("No resume uploaded yet.");
-  const [status, setStatus] = useState("Upload your resume to auto-detect skills and coursework.");
+  const [status, setStatus] = useState("Upload your resume to auto-detect skills and courses.");
 
   const completion = useMemo(() => {
     if (step === 1) return 33;
@@ -148,16 +149,20 @@ function OnboardingPage({ profile, setProfile, preferences, setPreferences }) {
         <p>{status}</p>
       </div>
 
+      <div className="section-visual-card">
+        <img src={onboardingProfileVisual} alt="Profile parsing illustration" className="section-visual-image" />
+      </div>
+
       <div className="progress-track" aria-label="Onboarding progress">
         <span style={{ width: `${completion}%` }} />
       </div>
 
       <div className="step-tabs">
         <button className={step === 1 ? "active" : ""} onClick={() => setStep(1)} type="button">
-          Step 1: Resume Upload
+          Step 1: Upload
         </button>
         <button className={step === 2 ? "active" : ""} onClick={() => setStep(2)} type="button">
-          Step 2: Verify Parsing
+          Step 2: Verify
         </button>
         <button className={step === 3 ? "active" : ""} onClick={() => setStep(3)} type="button">
           Step 3: Preferences
@@ -174,7 +179,7 @@ function OnboardingPage({ profile, setProfile, preferences, setPreferences }) {
             tabIndex={0}
           >
             <p>Drag and drop your resume here</p>
-            <p className="hint">or upload a text-based resume file to simulate parsing</p>
+            <p className="hint">or upload a text file</p>
             <label className="btn-secondary file-label" htmlFor="resumeFile">
               Select Resume File
             </label>
@@ -214,8 +219,7 @@ function OnboardingPage({ profile, setProfile, preferences, setPreferences }) {
           <aside className="verify-help">
             <h4>Why this matters</h4>
             <p>
-              Your feed and match confidence are only as accurate as this profile. Add missing skills, coursework,
-              or experiences so you do not under-estimate your competitiveness.
+              Better profile data means better match accuracy.
             </p>
             <button type="button" className="btn-primary" onClick={() => setStep(3)}>
               Looks good, continue
@@ -284,7 +288,7 @@ function OnboardingPage({ profile, setProfile, preferences, setPreferences }) {
           </label>
 
           <p className="hint">
-            Tip: Hover over match scores in the dashboard to see how confidence is calculated.
+            Tip: Hover on match scores for scoring details.
           </p>
         </div>
       )}

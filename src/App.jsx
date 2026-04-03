@@ -82,7 +82,7 @@ function App() {
         <div className="top-nav">
           <div className="brand-block">
             <span className="brand-kicker">Co-op Compass</span>
-            <h1>Strategic co-op decisions, not blind applications.</h1>
+            <h1>Clear next steps for your co-op search.</h1>
           </div>
           <nav>
             <NavLink to="/" end>

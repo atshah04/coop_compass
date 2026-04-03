@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import MatchRing from "../components/MatchRing";
+import detailAlignmentVisual from "../assets/illustrations/detail-alignment.svg";
 
 function normalize(value) {
   return value.toLowerCase();
@@ -48,10 +49,13 @@ function JobDetailPage({ jobs, profile }) {
             {job.location} | {job.salary ? `$${job.salary}/hr` : "Salary not listed"} | Deadline {job.deadline}
           </p>
           <Link className="btn-secondary connect-link" to={`/connect?jobId=${job.id}`}>
-            Message past interns for this exact role
+            Chat with past interns
           </Link>
         </div>
-        <MatchRing score={job.matchScore} />
+        <div className="detail-hero-visual-wrap">
+          <img src={detailAlignmentVisual} alt="Role fit comparison illustration" className="detail-hero-visual" />
+          <MatchRing score={job.matchScore} />
+        </div>
       </div>
 
       <div className="tab-row">
@@ -86,9 +90,9 @@ function JobDetailPage({ jobs, profile }) {
             <article>
               <h3>Your matching evidence</h3>
               <ul>
-                {breakdown.matched.length === 0 && <li>No direct matches yet. Add profile details in onboarding.</li>}
+                {breakdown.matched.length === 0 && <li>No direct matches yet.</li>}
                 {breakdown.matched.map((match) => (
-                  <li key={match}>You have {match} in your profile.</li>
+                  <li key={match}>{match}</li>
                 ))}
               </ul>
             </article>
@@ -106,9 +110,7 @@ function JobDetailPage({ jobs, profile }) {
                   <div>
                     <p className="gap-skill">{gap}</p>
                     <p className="hint">
-                      {learnable
-                        ? "Likely learnable on the job with focused prep."
-                        : "Potential dealbreaker without concrete evidence in projects."}
+                      {learnable ? "Likely learnable with prep." : "Risky without project evidence."}
                     </p>
                   </div>
                   <span className={learnable ? "badge-learnable" : "badge-dealbreaker"}>
@@ -126,12 +128,8 @@ function JobDetailPage({ jobs, profile }) {
           {job.reviews.map((review, index) => (
             <article key={`${review.from}-${index}`}>
               <h4>{review.from} Review</h4>
-              <p>
-                <strong>Interview difficulty:</strong> {review.interview}
-              </p>
-              <p>
-                <strong>Actual day-to-day:</strong> {review.dayToDay}
-              </p>
+              <p><strong>Interview:</strong> {review.interview}</p>
+              <p><strong>Day-to-day:</strong> {review.dayToDay}</p>
               <p>{review.quote}</p>
             </article>
           ))}

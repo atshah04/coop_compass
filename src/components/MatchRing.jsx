@@ -8,7 +8,7 @@ function MatchRing({ score }) {
       style={{
         background: `conic-gradient(${color} ${normalized}%, rgba(11, 34, 58, 0.12) ${normalized}% 100%)`
       }}
-      title="Hover to see how we calculated your match score based on requirement overlap and profile strength."
+      title="Match score from requirement overlap and profile strength."
     >
       <span>{normalized}%</span>
     </div>

@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { PEER_CHANNELS } from "../data/mockData";
+import connectChatVisual from "../assets/illustrations/connect-chat.svg";
 
 function PeerConnectPage({ jobs }) {
   const [params] = useSearchParams();
@@ -54,17 +55,18 @@ function PeerConnectPage({ jobs }) {
     <section className="connect-page">
       <div className="section-head">
         <h2>Peer Connect Portal</h2>
-        <p>
-          Talk directly with students who interned in this exact company and position. Use these chats to get
-          practical clarity before applying.
-        </p>
+        <p>Ask past interns targeted questions before applying.</p>
+      </div>
+
+      <div className="section-visual-card">
+        <img src={connectChatVisual} alt="Mentor chat illustration" className="section-visual-image" />
       </div>
 
       <div className="connect-layout">
         <aside className="connect-sidebar">
           <h3>Available channels</h3>
           {filteredChannels.length === 0 && (
-            <p className="empty">No channel found for this role yet. Try the general list from the top nav.</p>
+            <p className="empty">No channel for this role yet. Try the full list.</p>
           )}
           {filteredChannels.map((channel) => {
             const job = jobLookup[channel.jobId];
@@ -77,7 +79,7 @@ function PeerConnectPage({ jobs }) {
               >
                 <strong>{channel.company}</strong>
                 <span>{channel.role}</span>
-                <small>{job ? `Match context: ${job.matchScore}%` : "Role context unavailable"}</small>
+                <small>{job ? `Match: ${job.matchScore}%` : "No match data"}</small>
               </button>
             );
           })}
@@ -97,7 +99,7 @@ function PeerConnectPage({ jobs }) {
                   <p className="eyebrow">{activeChannel.company}</p>
                   <h3>{activeChannel.role}</h3>
                   <p>
-                    Mentor: {activeChannel.mentor} | Class of {activeChannel.gradYear}
+                    {activeChannel.mentor} | Class of {activeChannel.gradYear}
                   </p>
                 </div>
                 <p className="hint">{activeChannel.responseTime}</p>
@@ -125,7 +127,7 @@ function PeerConnectPage({ jobs }) {
                 <input
                   value={draft}
                   onChange={(event) => setDraft(event.target.value)}
-                  placeholder="Ask about the interview, role expectations, or day-to-day work"
+                  placeholder="Ask about interview, team, or role expectations"
                 />
                 <button type="submit" className="btn-primary">
                   Send

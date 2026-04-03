@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import trackerFlowVisual from "../assets/illustrations/tracker-flow.svg";
 
 function TrackerPage({
   jobs,
@@ -34,10 +35,11 @@ function TrackerPage({
     <section className="tracker-page">
       <div className="section-head">
         <h2>Application Tracker & Feedback Hub</h2>
-        <p>
-          Move cards through each stage and get closure after rejection with aggregated patterns from similar
-          applicants.
-        </p>
+        <p>Move applications by stage and capture quick notes.</p>
+      </div>
+
+      <div className="section-visual-card">
+        <img src={trackerFlowVisual} alt="Application tracker flow illustration" className="section-visual-image" />
       </div>
 
       <div className="kanban-grid">
@@ -85,18 +87,15 @@ function TrackerPage({
       {activeJob && (
         <div className="insight-modal" role="dialog" aria-modal="true">
           <div className="insight-content">
-            <h3>Post-rejection post-mortem: {activeJob.role}</h3>
-            <p>
-              You are not left guessing. Here is what previous applicants reported for similar rejections at this
-              company and role type.
-            </p>
+            <h3>Rejection insights: {activeJob.role}</h3>
+            <p>Common patterns from similar applicants:</p>
             <ul>
               {activeJob.rejectionInsights.map((insight) => (
                 <li key={insight}>{insight}</li>
               ))}
             </ul>
             <button type="button" className="btn-primary" onClick={() => setActiveInsightJobId(null)}>
-              Close and plan next steps
+              Close
             </button>
           </div>
         </div>
